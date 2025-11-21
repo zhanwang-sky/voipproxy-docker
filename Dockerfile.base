@@ -1,7 +1,5 @@
 FROM ubuntu:latest
 
-WORKDIR /root
-
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     autoconf \
@@ -81,3 +79,5 @@ RUN apt-get update && \
 RUN python3 -m venv /root/pyvenv && \
     . /root/pyvenv/bin/activate && \
     pip3 install mysqlclient setuptools sqlalchemy sqlalchemy-utils pyOpenSSL opensips
+
+WORKDIR /root
